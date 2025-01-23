@@ -18,4 +18,9 @@ class Business extends Model
     {
         return $this->hasMany(Branch::class, 'business_id');
     }
+
+    public static function list()
+    {
+        return self::pluck('name','id')->toArray();
+    }
 }
